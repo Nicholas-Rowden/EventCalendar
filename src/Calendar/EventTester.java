@@ -3,6 +3,9 @@ package Calendar;
 import java.time.LocalDateTime;
 import java.time.Duration;
 
+/**
+ * Class to test the functionality of Event-related classes.
+ */
 public class EventTester {
 
     public static void main(String[] args) {
@@ -13,6 +16,9 @@ public class EventTester {
         testEndTimeUpdate();
     }
 
+    /**
+     * Test case to validate the creation of a Meeting object.
+     */
     private static void testMeetingCreation() {
         System.out.println("=== Test: Meeting Creation ===");
         LocalDateTime start = LocalDateTime.of(2025, 2, 10, 10, 0);
@@ -27,6 +33,9 @@ public class EventTester {
         System.out.println();
     }
 
+    /**
+     * Test case to validate the completion functionality of a Meeting object.
+     */
     private static void testCompleteFunction() {
         System.out.println("=== Test: Completing a Meeting ===");
         LocalDateTime start = LocalDateTime.of(2025, 2, 10, 14, 0);
@@ -39,6 +48,9 @@ public class EventTester {
         System.out.println();
     }
 
+    /**
+     * Test case to validate the duration calculation of a Meeting object.
+     */
     private static void testDurationCalculation() {
         System.out.println("=== Test: Meeting Duration ===");
         LocalDateTime start = LocalDateTime.of(2025, 2, 10, 9, 30);
@@ -52,6 +64,9 @@ public class EventTester {
         System.out.println();
     }
 
+    /**
+     * Test case to validate the location update functionality of a Meeting object.
+     */
     private static void testLocationUpdate() {
         System.out.println("=== Test: Updating Meeting Location ===");
         LocalDateTime start = LocalDateTime.of(2025, 2, 10, 16, 0);
@@ -64,6 +79,9 @@ public class EventTester {
         System.out.println();
     }
 
+    /**
+     * Test case to validate the end time update functionality of a Meeting object.
+     */
     private static void testEndTimeUpdate() {
         System.out.println("=== Test: Updating Meeting End Time ===");
         LocalDateTime start = LocalDateTime.of(2025, 2, 10, 13, 0);

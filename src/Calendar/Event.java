@@ -2,6 +2,12 @@ package Calendar;
 
 import java.time.LocalDateTime;
 
+/**
+ * Abstract base class for all events.
+ * Implements Comparable to allow sorting by date.
+ * Uses Template Method Pattern for the handle() method.
+ * Supports Strategy Pattern via displayStrategy.
+ */
 public abstract class Event implements Comparable<Event> {
     private String name;
     private LocalDateTime dateTime;
@@ -13,18 +19,15 @@ public abstract class Event implements Comparable<Event> {
         this.dateTime = dateTime;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public LocalDateTime getDateTime() { return dateTime; }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
+    // Strategy Pattern method
     public void setDisplayStrategy(DisplayStrategy strategy) {
         this.displayStrategy = strategy;
     }
 
+    // Calls the current display strategy
     public void show() {
         if (displayStrategy != null) {
             displayStrategy.display(this);
@@ -33,13 +36,14 @@ public abstract class Event implements Comparable<Event> {
         }
     }
 
-    // Template method
+    // Template Method Pattern: defines the overall workflow
     public final void handle() {
-        prepare();
-        execute();
-        cleanup();
+        prepare();  // Step 1: preparation
+        execute();  // Step 2: actual work
+        cleanup();  // Step 3: cleanup
     }
 
+    // Default steps (can be overridden)
     protected void prepare() {
         System.out.println("Default preparation for event: " + name);
     }

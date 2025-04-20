@@ -2,6 +2,9 @@ package Calendar;
 
 import java.time.LocalDateTime;
 
+/**
+ * A deadline event that only overrides the execution logic.
+ */
 public class Deadline extends Event {
 
     public Deadline(String name, LocalDateTime dateTime) {

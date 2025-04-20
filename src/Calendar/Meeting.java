@@ -3,6 +3,10 @@ package Calendar;
 import java.time.LocalDateTime;
 import java.time.Duration;
 
+/**
+ * A meeting event with a start time, end time, and location.
+ * Overrides preparation and cleanup steps.
+ */
 public class Meeting extends Event {
     private LocalDateTime endTime;
     private String location;
@@ -13,13 +17,8 @@ public class Meeting extends Event {
         this.location = location;
     }
 
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public String getLocation() {
-        return location;
-    }
+    public LocalDateTime getEndTime() { return endTime; }
+    public String getLocation() { return location; }
 
     public Duration getDuration() {
         return Duration.between(getDateTime(), endTime);

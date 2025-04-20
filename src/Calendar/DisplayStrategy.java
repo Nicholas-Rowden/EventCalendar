@@ -1,5 +1,5 @@
 package Calendar;
 
 public interface DisplayStrategy {
-    void display(event e);
+    void display(Event e);
 }
